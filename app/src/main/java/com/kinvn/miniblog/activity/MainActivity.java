@@ -1,8 +1,12 @@
-package com.kinvn.miniblog;
+package com.kinvn.miniblog.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,22 +14,42 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.kinvn.miniblog.R;
+import com.kinvn.miniblog.fragment.TimelineFragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    @BindView(R.id.main_view_pager)
+    ViewPager mViewPage;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
         setSupportActionBar(toolbar);
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
-
+        List<Fragment> list = new ArrayList<>();
+        list.add(new TimelineFragment());
+        list.add(new TimelineFragment());
+        mViewPage.setOffscreenPageLimit(list.size());
+        mViewPage.setCurrentItem(0);
+        mViewPage.setAdapter(new MyFragmentAdapter(getSupportFragmentManager(), list, null));
     }
 
     @Override
@@ -40,7 +64,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -84,4 +107,41 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    @OnClick(R.id.button_switch_weibo_group)
+    void switchGroup() {
+        if (mViewPage.getCurrentItem() == 0) {
+            // TODO: 2017/8/28
+        } else {
+            mViewPage.setCurrentItem(0);
+        }
+    }
+
+    @OnClick(R.id.button_message)
+    void switchMessage() {
+        mViewPage.setCurrentItem(1);
+    }
+
+    class MyFragmentAdapter extends FragmentPagerAdapter{
+        private List<Fragment> fragmentList;
+        private List<String> titles;
+
+        MyFragmentAdapter(FragmentManager fm, List<Fragment> list, List<String> titles) {
+            super(fm);
+            fragmentList = list;
+            this.titles = titles;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return fragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fragmentList.size();
+        }
+
+    }
+
 }

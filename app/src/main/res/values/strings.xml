@@ -4,8 +4,14 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <!--首页-->
+    <string name="all_blog">全部微博</string>
+    <string name="message">消息</string>
 
-    <string name="_24hours">Last 24 hours</string>
-    <string name="last_hour">Last hour</string>
+    <string name="action_settings">设置</string>
+
+    <!--右滑栏-->
+    <string name="global_list">榜单</string>
+    <string name="_24hours">日榜</string>
+    <string name="last_hour">小时榜</string>
 </resources>
