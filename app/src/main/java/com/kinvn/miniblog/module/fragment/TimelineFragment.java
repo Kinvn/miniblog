@@ -1,4 +1,4 @@
-package com.kinvn.miniblog.fragment;
+package com.kinvn.miniblog.module.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
