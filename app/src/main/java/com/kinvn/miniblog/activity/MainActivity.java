@@ -15,6 +15,7 @@ import android.view.MenuItem;
 
 import com.kinvn.miniblog.R;
 import com.kinvn.miniblog.base.BaseActivity;
+import com.kinvn.miniblog.module.fragment.MessageFragment;
 import com.kinvn.miniblog.module.fragment.TimelineFragment;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 
@@ -56,7 +57,7 @@ public class MainActivity extends BaseActivity
         toggle.syncState();
         List<Fragment> list = new ArrayList<>();
         list.add(new TimelineFragment());
-        list.add(new TimelineFragment());
+        list.add(new MessageFragment());
         mViewPage.setOffscreenPageLimit(list.size());
         mViewPage.setCurrentItem(0);
         mViewPage.setAdapter(new MyFragmentAdapter(getSupportFragmentManager(), list, null));

@@ -9,20 +9,30 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class WbDBOpenHelper extends SQLiteOpenHelper {
-    private static final String ACCOUNT_DATA_BASE = "ACCOUNT_DATA_BASE";
+    private static final String CREATE_OAUTH_DB = "create table OauthDB(" +
+            "uid text primary key, " +
+            "access_token text, " +
+            "refresh_token text, " +
+            "expires_time integer)";
 
-    public WbDBOpenHelper(Context context, String name
-            , SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    private static final String CREATE_ACCOUNT_DB = "create table AccountDB(" +
+            "uid text primary key, " +
+            "account_name text)";
+
+    public WbDBOpenHelper(Context context) {
+        super(context, "MiniBlog", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
+        sqLiteDatabase.execSQL(CREATE_OAUTH_DB);
+        sqLiteDatabase.execSQL(CREATE_ACCOUNT_DB);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        sqLiteDatabase.execSQL("drop table if exits OauthDB");
+        sqLiteDatabase.execSQL("drop table if exits AccountDB");
+        onCreate(sqLiteDatabase);
     }
 }

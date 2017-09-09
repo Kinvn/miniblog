@@ -1,9 +1,7 @@
 package com.kinvn.miniblog.network.api;
 
 import com.kinvn.miniblog.Constants;
-import com.kinvn.miniblog.model.WbStatus;
-
-import java.util.List;
+import com.kinvn.miniblog.model.StatusesResult;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -15,7 +13,7 @@ import rx.Observable;
 
 public interface WbStatusesApi {
     @GET("2/statuses/home_timeline.json")
-    Observable<List<WbStatus>> getHomeTimelineStatuses(@Query(Constants.KEY_ACCESS_TOKEN) String accessToken,
+    Observable<StatusesResult> getHomeTimelineStatuses(@Query(Constants.KEY_ACCESS_TOKEN) String accessToken,
                                                        @Query(Constants.KEY_SINCE_ID) long sinceId,
                                                        @Query(Constants.KEY_COUNT) int count,
                                                        @Query(Constants.KEY_PAGE) int page);

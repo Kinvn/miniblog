@@ -4,6 +4,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <!--账号管理-->
+    <string name="account_management">账号管理</string>
+    <string name="add_account">添加账户</string>
     <!--首页-->
     <string name="all_blog">全部微博</string>
     <string name="message">消息</string>

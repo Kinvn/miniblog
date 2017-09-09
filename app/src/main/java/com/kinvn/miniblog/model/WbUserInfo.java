@@ -1,11 +1,16 @@
 package com.kinvn.miniblog.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Kinvn on 2017/9/1.
  */
 
 public class WbUserInfo {
     private long id;
+    private String idstr;
+    @SerializedName("class")
+    private int classX;
     private String screen_name;
     private String name;
     private String province;
@@ -14,24 +19,48 @@ public class WbUserInfo {
     private String description;
     private String url;
     private String profile_image_url;
+    private String cover_image_phone;
+    private String profile_url;
     private String domain;
+    private String weihao;
     private String gender;
-    private long followers_count;
-    private long friends_count;
-    private long statuses_count;
-    private long favourites_count;
+    private int followers_count;
+    private int friends_count;
+    private int pagefriends_count;
+    private int statuses_count;
+    private int favourites_count;
     private String created_at;
     private boolean following;
     private boolean allow_all_act_msg;
     private boolean geo_enabled;
     private boolean verified;
+    private int verified_type;
+    private String remark;
+    private InsecurityBean insecurity;
     private WbStatus status;
+    private int ptype;
     private boolean allow_all_comment;
     private String avatar_large;
+    private String avatar_hd;
     private String verified_reason;
+    private String verified_trade;
+    private String verified_reason_url;
+    private String verified_source;
+    private String verified_source_url;
     private boolean follow_me;
-    private long online_status;
-    private long bi_followers_count;
+    private int online_status;
+    private int bi_followers_count;
+    private String lang;
+    private int star;
+    private int mbtype;
+    private int mbrank;
+    private int block_word;
+    private int block_app;
+    private int credit_score;
+    private int user_ability;
+    private int urank;
+    private int story_read_state;
+    private int vclub_member;
 
     public long getId() {
         return id;
@@ -39,6 +68,22 @@ public class WbUserInfo {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getIdstr() {
+        return idstr;
+    }
+
+    public void setIdstr(String idstr) {
+        this.idstr = idstr;
+    }
+
+    public int getClassX() {
+        return classX;
+    }
+
+    public void setClassX(int classX) {
+        this.classX = classX;
     }
 
     public String getScreen_name() {
@@ -105,12 +150,36 @@ public class WbUserInfo {
         this.profile_image_url = profile_image_url;
     }
 
+    public String getCover_image_phone() {
+        return cover_image_phone;
+    }
+
+    public void setCover_image_phone(String cover_image_phone) {
+        this.cover_image_phone = cover_image_phone;
+    }
+
+    public String getProfile_url() {
+        return profile_url;
+    }
+
+    public void setProfile_url(String profile_url) {
+        this.profile_url = profile_url;
+    }
+
     public String getDomain() {
         return domain;
     }
 
     public void setDomain(String domain) {
         this.domain = domain;
+    }
+
+    public String getWeihao() {
+        return weihao;
+    }
+
+    public void setWeihao(String weihao) {
+        this.weihao = weihao;
     }
 
     public String getGender() {
@@ -121,35 +190,43 @@ public class WbUserInfo {
         this.gender = gender;
     }
 
-    public long getFollowers_count() {
+    public int getFollowers_count() {
         return followers_count;
     }
 
-    public void setFollowers_count(long followers_count) {
+    public void setFollowers_count(int followers_count) {
         this.followers_count = followers_count;
     }
 
-    public long getFriends_count() {
+    public int getFriends_count() {
         return friends_count;
     }
 
-    public void setFriends_count(long friends_count) {
+    public void setFriends_count(int friends_count) {
         this.friends_count = friends_count;
     }
 
-    public long getStatuses_count() {
+    public int getPagefriends_count() {
+        return pagefriends_count;
+    }
+
+    public void setPagefriends_count(int pagefriends_count) {
+        this.pagefriends_count = pagefriends_count;
+    }
+
+    public int getStatuses_count() {
         return statuses_count;
     }
 
-    public void setStatuses_count(long statuses_count) {
+    public void setStatuses_count(int statuses_count) {
         this.statuses_count = statuses_count;
     }
 
-    public long getFavourites_count() {
+    public int getFavourites_count() {
         return favourites_count;
     }
 
-    public void setFavourites_count(long favourites_count) {
+    public void setFavourites_count(int favourites_count) {
         this.favourites_count = favourites_count;
     }
 
@@ -193,12 +270,44 @@ public class WbUserInfo {
         this.verified = verified;
     }
 
+    public int getVerified_type() {
+        return verified_type;
+    }
+
+    public void setVerified_type(int verified_type) {
+        this.verified_type = verified_type;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public InsecurityBean getInsecurity() {
+        return insecurity;
+    }
+
+    public void setInsecurity(InsecurityBean insecurity) {
+        this.insecurity = insecurity;
+    }
+
     public WbStatus getStatus() {
         return status;
     }
 
     public void setStatus(WbStatus status) {
         this.status = status;
+    }
+
+    public int getPtype() {
+        return ptype;
+    }
+
+    public void setPtype(int ptype) {
+        this.ptype = ptype;
     }
 
     public boolean isAllow_all_comment() {
@@ -217,12 +326,52 @@ public class WbUserInfo {
         this.avatar_large = avatar_large;
     }
 
+    public String getAvatar_hd() {
+        return avatar_hd;
+    }
+
+    public void setAvatar_hd(String avatar_hd) {
+        this.avatar_hd = avatar_hd;
+    }
+
     public String getVerified_reason() {
         return verified_reason;
     }
 
     public void setVerified_reason(String verified_reason) {
         this.verified_reason = verified_reason;
+    }
+
+    public String getVerified_trade() {
+        return verified_trade;
+    }
+
+    public void setVerified_trade(String verified_trade) {
+        this.verified_trade = verified_trade;
+    }
+
+    public String getVerified_reason_url() {
+        return verified_reason_url;
+    }
+
+    public void setVerified_reason_url(String verified_reason_url) {
+        this.verified_reason_url = verified_reason_url;
+    }
+
+    public String getVerified_source() {
+        return verified_source;
+    }
+
+    public void setVerified_source(String verified_source) {
+        this.verified_source = verified_source;
+    }
+
+    public String getVerified_source_url() {
+        return verified_source_url;
+    }
+
+    public void setVerified_source_url(String verified_source_url) {
+        this.verified_source_url = verified_source_url;
     }
 
     public boolean isFollow_me() {
@@ -233,19 +382,123 @@ public class WbUserInfo {
         this.follow_me = follow_me;
     }
 
-    public long getOnline_status() {
+    public int getOnline_status() {
         return online_status;
     }
 
-    public void setOnline_status(long online_status) {
+    public void setOnline_status(int online_status) {
         this.online_status = online_status;
     }
 
-    public long getBi_followers_count() {
+    public int getBi_followers_count() {
         return bi_followers_count;
     }
 
-    public void setBi_followers_count(long bi_followers_count) {
+    public void setBi_followers_count(int bi_followers_count) {
         this.bi_followers_count = bi_followers_count;
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+
+    public int getStar() {
+        return star;
+    }
+
+    public void setStar(int star) {
+        this.star = star;
+    }
+
+    public int getMbtype() {
+        return mbtype;
+    }
+
+    public void setMbtype(int mbtype) {
+        this.mbtype = mbtype;
+    }
+
+    public int getMbrank() {
+        return mbrank;
+    }
+
+    public void setMbrank(int mbrank) {
+        this.mbrank = mbrank;
+    }
+
+    public int getBlock_word() {
+        return block_word;
+    }
+
+    public void setBlock_word(int block_word) {
+        this.block_word = block_word;
+    }
+
+    public int getBlock_app() {
+        return block_app;
+    }
+
+    public void setBlock_app(int block_app) {
+        this.block_app = block_app;
+    }
+
+    public int getCredit_score() {
+        return credit_score;
+    }
+
+    public void setCredit_score(int credit_score) {
+        this.credit_score = credit_score;
+    }
+
+    public int getUser_ability() {
+        return user_ability;
+    }
+
+    public void setUser_ability(int user_ability) {
+        this.user_ability = user_ability;
+    }
+
+    public int getUrank() {
+        return urank;
+    }
+
+    public void setUrank(int urank) {
+        this.urank = urank;
+    }
+
+    public int getStory_read_state() {
+        return story_read_state;
+    }
+
+    public void setStory_read_state(int story_read_state) {
+        this.story_read_state = story_read_state;
+    }
+
+    public int getVclub_member() {
+        return vclub_member;
+    }
+
+    public void setVclub_member(int vclub_member) {
+        this.vclub_member = vclub_member;
+    }
+
+    public static class InsecurityBean {
+        /**
+         * sexual_content : false
+         */
+
+        private boolean sexual_content;
+
+        public boolean isSexual_content() {
+            return sexual_content;
+        }
+
+        public void setSexual_content(boolean sexual_content) {
+            this.sexual_content = sexual_content;
+        }
     }
 }

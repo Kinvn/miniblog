@@ -15,4 +15,9 @@ public class Constants {
     public static final String KEY_UID = "uid";
     public static final String KEY_REFRESH_TOKEN = "refresh_token";
     public static final String KEY_EXPIRES_IN = "expires_in";
+    public static final String KEY_SINCE_ID = "since_id";
+    public static final String KEY_COUNT = "count";
+    public static final String KEY_PAGE = "page";
+
+    public static final String KEY_USER_INFO = "user_info";
 }
