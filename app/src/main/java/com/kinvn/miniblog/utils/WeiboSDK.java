@@ -1,4 +1,4 @@
-package com.kinvn.miniblog.tools;
+package com.kinvn.miniblog.utils;
 
 import android.content.Context;
 

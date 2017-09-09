@@ -4,34 +4,34 @@ package com.kinvn.miniblog.model;
  * Created by Kinvn on 2017/9/1.
  */
 
-public class WeiboUserInfo {
-    public long id;
-    public String screen_name;
-    public String name;
-    public String province;
-    public String city;
-    public String location;
-    public String description;
-    public String url;
-    public String profile_image_url;
-    public String domain;
-    public String gender;
-    public long followers_count;
-    public long friends_count;
-    public long statuses_count;
-    public long favourites_count;
-    public String created_at;
-    public boolean following;
-    public boolean allow_all_act_msg;
-    public boolean geo_enabled;
-    public boolean verified;
-    public Status status;
-    public boolean allow_all_comment;
-    public String avatar_large;
-    public String verified_reason;
-    public boolean follow_me;
-    public long online_status;
-    public long bi_followers_count;
+public class WbUserInfo {
+    private long id;
+    private String screen_name;
+    private String name;
+    private String province;
+    private String city;
+    private String location;
+    private String description;
+    private String url;
+    private String profile_image_url;
+    private String domain;
+    private String gender;
+    private long followers_count;
+    private long friends_count;
+    private long statuses_count;
+    private long favourites_count;
+    private String created_at;
+    private boolean following;
+    private boolean allow_all_act_msg;
+    private boolean geo_enabled;
+    private boolean verified;
+    private WbStatus status;
+    private boolean allow_all_comment;
+    private String avatar_large;
+    private String verified_reason;
+    private boolean follow_me;
+    private long online_status;
+    private long bi_followers_count;
 
     public long getId() {
         return id;
@@ -193,11 +193,11 @@ public class WeiboUserInfo {
         this.verified = verified;
     }
 
-    public Status getStatus() {
+    public WbStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(WbStatus status) {
         this.status = status;
     }
 
@@ -247,134 +247,5 @@ public class WeiboUserInfo {
 
     public void setBi_followers_count(long bi_followers_count) {
         this.bi_followers_count = bi_followers_count;
-    }
-
-    static class Status {
-        public String created_at;
-        public long id;
-        public String text;
-        public String source;
-        public String favorited;
-        public String truncated;
-        public String  in_reply_to_status_id;
-        public String in_reply_to_user_id;
-        public String in_reply_to_screen_name;
-        public String geo;
-        public String mid;
-        public String annotations;
-        public long reposts_count;
-        public long comments_count;
-
-        public String getCreated_at() {
-            return created_at;
-        }
-
-        public void setCreated_at(String created_at) {
-            this.created_at = created_at;
-        }
-
-        public long getId() {
-            return id;
-        }
-
-        public void setId(long id) {
-            this.id = id;
-        }
-
-        public String getText() {
-            return text;
-        }
-
-        public void setText(String text) {
-            this.text = text;
-        }
-
-        public String getSource() {
-            return source;
-        }
-
-        public void setSource(String source) {
-            this.source = source;
-        }
-
-        public String getFavorited() {
-            return favorited;
-        }
-
-        public void setFavorited(String favorited) {
-            this.favorited = favorited;
-        }
-
-        public String getTruncated() {
-            return truncated;
-        }
-
-        public void setTruncated(String truncated) {
-            this.truncated = truncated;
-        }
-
-        public String getIn_reply_to_status_id() {
-            return in_reply_to_status_id;
-        }
-
-        public void setIn_reply_to_status_id(String in_reply_to_status_id) {
-            this.in_reply_to_status_id = in_reply_to_status_id;
-        }
-
-        public String getIn_reply_to_user_id() {
-            return in_reply_to_user_id;
-        }
-
-        public void setIn_reply_to_user_id(String in_reply_to_user_id) {
-            this.in_reply_to_user_id = in_reply_to_user_id;
-        }
-
-        public String getIn_reply_to_screen_name() {
-            return in_reply_to_screen_name;
-        }
-
-        public void setIn_reply_to_screen_name(String in_reply_to_screen_name) {
-            this.in_reply_to_screen_name = in_reply_to_screen_name;
-        }
-
-        public String getGeo() {
-            return geo;
-        }
-
-        public void setGeo(String geo) {
-            this.geo = geo;
-        }
-
-        public String getMid() {
-            return mid;
-        }
-
-        public void setMid(String mid) {
-            this.mid = mid;
-        }
-
-        public String getAnnotations() {
-            return annotations;
-        }
-
-        public void setAnnotations(String annotations) {
-            this.annotations = annotations;
-        }
-
-        public long getReposts_count() {
-            return reposts_count;
-        }
-
-        public void setReposts_count(long reposts_count) {
-            this.reposts_count = reposts_count;
-        }
-
-        public long getComments_count() {
-            return comments_count;
-        }
-
-        public void setComments_count(long comments_count) {
-            this.comments_count = comments_count;
-        }
     }
 }
