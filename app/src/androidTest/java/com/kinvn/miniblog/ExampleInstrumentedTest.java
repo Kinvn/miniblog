@@ -1,11 +1,16 @@
 package com.kinvn.miniblog;
 
 import android.content.Context;
+import android.icu.util.Calendar;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import static org.junit.Assert.*;
 
@@ -22,5 +27,8 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getTargetContext();
 
         assertEquals("com.kinvn.miniblog", appContext.getPackageName());
+
+        Log.i("tag1",new SimpleDateFormat("EE MMM dd HH:mm:ss Z yyyy", Locale.ENGLISH).format
+                (java.util.Calendar.getInstance().getTime()));
     }
 }
