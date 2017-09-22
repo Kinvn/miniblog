@@ -41,7 +41,7 @@ public class WbStatus {
     private String gif_ids;
     private int is_show_bulletin;
     private CommentManageInfoBeanX comment_manage_info;
-    private List<?> pic_urls;
+    private List<WbPicture> pic_urls;
     private List<?> darwin_tags;
     private List<?> hot_weibo_tags;
     private List<?> text_tag_tips;
@@ -318,11 +318,11 @@ public class WbStatus {
         this.comment_manage_info = comment_manage_info;
     }
 
-    public List<?> getPic_urls() {
+    public List<WbPicture> getPic_urls() {
         return pic_urls;
     }
 
-    public void setPic_urls(List<?> pic_urls) {
+    public void setPic_urls(List<WbPicture> pic_urls) {
         this.pic_urls = pic_urls;
     }
 
@@ -389,6 +389,18 @@ public class WbStatus {
 
         public void setComment_permission_type(int comment_permission_type) {
             this.comment_permission_type = comment_permission_type;
+        }
+    }
+
+    public static class WbPicture {
+        private String thumbnail_pic;
+
+        public String getThumbnail_pic() {
+            return thumbnail_pic;
+        }
+
+        public void setThumbnail_pic(String thumbnail_pic) {
+            this.thumbnail_pic = thumbnail_pic;
         }
     }
 }
